@@ -1,63 +1,60 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from 'react'
+import '../App.css'
 import { Button, Input } from '../components/index'
 
-
 class SignInForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
+  constructor (props) {
+    super(props)
+    this.state = {
       email: '',
-      password: '',
-    };
-  
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    
+      password: ''
+    }
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(event) {
-    let { name, value } = event.target;
+  handleChange (event) {
+    let { name, value } = event.target
     this.setState({
       [name]: value
-    });
+    })
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log(this.state);
+  handleSubmit (event) {
+    event.preventDefault()
+    console.log(this.state)
   }
-  
-  
-  render() {
+
+  render () {
     const {
       email,
-      password,
-    } = this.state;
-    const { onClick } = this.props;
-    return(
-      <div>
-        <form>
-          <label className='labels'>Sign In</label>
-          <div className="fieldPosition">
-            <Input type='email' id='email' name='email' placeholder='Email' value={email} onChange={this.handleChange} className='inputField' />
+      password
+    } = this.state
+    const { onClick } = this.props
+    return (
+      <div className='formCenter'>
+        <form className=''>
+          <label className='formField__Label'>Sign In</label>
+          <div className='formField'>
+            <Input type='email' id='email' name='email' placeholder='Email' value={email} onChange={this.handleChange} className='formField__Input' />
           </div>
-          <div className='fieldPosition'>
-            <Input type='password' id='password' name='password' placeholder='Password' value={password} onChange={this.handleChange} className='inputField' />
+          <div className='formField'>
+            <Input type='password' id='password' name='password' placeholder='Password' value={password} onChange={this.handleChange} className='formField__Input' />
           </div>
-          <div className='fieldPosition'>
-            <Button 
-              type='submit' 
-              onClick={this.handleSubmit} 
-              className=''
+          <div className='formField'>
+            <Button
+              type='submit'
+              onClick={this.handleSubmit}
+              className='formField__Button'
             >
               Sign In
             </Button>
           </div>
-          <div className='fieldPosition'>
-            <Button 
+          <div className='formField'>
+            <Button
               type='button'
-              className='' 
+              className='pageSwitcher'
               onClick={onClick}
             >
               Don't have an account? Click here!
@@ -65,9 +62,8 @@ class SignInForm extends Component {
           </div>
         </form>
       </div>
-      
-    );
+    )
   }
 }
 
-export default SignInForm;
+export default SignInForm

@@ -7,8 +7,6 @@ body, html {
   height: 100%;
 }
 
-
-
 .bg {
   background-image: url('./bg-cover.jpeg');
   background-size: cover;
