@@ -1,3 +1,5 @@
+Check the live demo. Open the developer tools and see how you receive your data through the console.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
